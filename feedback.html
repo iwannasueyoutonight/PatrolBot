@@ -5,7 +5,7 @@
   <title>Feedback</title>
   <style>
     body {
-      height:100%
+      height: 100%;
       background: linear-gradient(to bottom, azure, turquoise);
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -128,12 +128,17 @@
   <h2>We'd Love Your Feedback!</h2>
 
   <form action="https://formsubmit.co/m-13958885@moe-dl.edu.my" method="POST">
-  
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
 
+    <!-- Anti-bot hidden field -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Optional: Disable CAPTCHA -->
     <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirect after submission -->
     <input type="hidden" name="_next" value="thankyou.html">
 
     <button type="submit">Send Feedback</button>
@@ -148,4 +153,3 @@
 
 </body>
 </html>
-
