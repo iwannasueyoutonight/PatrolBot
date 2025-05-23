@@ -1,140 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Feedback</title>
-  <style>
-    body {
-      height: 100%;
-      background: linear-gradient(to bottom, azure, turquoise);
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
+<form id="feedbackForm" onsubmit="return fakeSubmit(event)">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" id="email" placeholder="Your Email" required>
+  <div id="emailError" class="error"></div>
+  <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
+
+  <button type="submit">Send Feedback</button>
+</form>
+
+<script>
+  function validateEmail(email) {
+    // Regular expression to check for Gmail domain
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    return emailPattern.test(email);
+  }
+
+  function fakeSubmit(event) {
+    event.preventDefault(); // Stop real form submission
+
+    var email = document.getElementById('email').value;
+    var emailError = document.getElementById('emailError');
+
+    if (!validateEmail(email)) {
+      emailError.textContent = "Please enter a valid Gmail address (e.g., example@gmail.com).";
+      return false;
+    } else {
+      emailError.textContent = "";
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #0077aa;
-      padding: 10px 20px;
-      color: white;
-    }
+    // Simulate processing delay then redirect
+    setTimeout(() => {
+      window.location.href = "thankyou.html";
+    }, 500); // 0.5 second delay for effect
 
-    header img {
-      height: 60px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #0099cc;
-      padding: 10px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 30px;
-      color: #333;
-    }
-
-    form {
-      background: white;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .error {
-      color: red;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <a href="index.html">
-      <img src="Logo.jpg" alt="Patrol Bot" title="Patrol Bot - Home's Best Guardian">
-    </a>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="teammembers.html">Team Members</a>
-    <a href="problemstatements.html">Problem Statements</a>
-    <a href="projectidea.html">Project Idea</a>
-    <a href="background.html">Background</a>
-    <a href="feedback.html">Feedback</a>
-  </nav>
-
-  <h2>We'd Love Your Feedback!</h2>
-
-  <form id="feedbackForm" action="thankyou.html" method="POST" onsubmit="return validateEmail()">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" id="email" placeholder="Your Email" required>
-    <div id="emailError" class="error"></div>
-    <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
-
-    <button type="submit">Send Feedback</button>
-  </form>
-
-  <script>
-    function validateEmail() {
-      var email = document.getElementById('email').value;
-      var emailError = document.getElementById('emailError');
-      
-      // Regular expression to check for Gmail domain
-      var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-      
-      if (!emailPattern.test(email)) {
-        emailError.textContent = "Please enter a valid Gmail address (e.g., example@gmail.com).";
-        return false;  // Prevent form submission
-      } else {
-        emailError.textContent = "";
-        return true;  // Allow form submission
-      }
-    }
-  </script>
-
-</body>
-</html>
+    return false;
+  }
+</script>
