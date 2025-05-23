@@ -83,6 +83,11 @@
     button:hover {
       background-color: #45a049;
     }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -104,13 +109,32 @@
 
   <h2>We'd Love Your Feedback!</h2>
 
-  <form action="thankyou.html" method="POST">
+  <form id="feedbackForm" action="thankyou.html" method="POST" onsubmit="return validateEmail()">
     <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <div id="emailError" class="error"></div>
     <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
 
     <button type="submit">Send Feedback</button>
   </form>
+
+  <script>
+    function validateEmail() {
+      var email = document.getElementById('email').value;
+      var emailError = document.getElementById('emailError');
+      
+      // Regular expression to check for Gmail domain
+      var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      
+      if (!emailPattern.test(email)) {
+        emailError.textContent = "Please enter a valid Gmail address (e.g., example@gmail.com).";
+        return false;  // Prevent form submission
+      } else {
+        emailError.textContent = "";
+        return true;  // Allow form submission
+      }
+    }
+  </script>
 
 </body>
 </html>
