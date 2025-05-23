@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patrol Bot - Home's Best Guardian</title>
+  <!-- Importing futuristic fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* Resetting default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling with starfield background */
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #0d0d0d 0%, #000000 100%);
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    }
+
+    /* Starfield effect using pseudo-elements */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: moveStars 100s linear infinite;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-500px, -500px); }
+    }
+
+    /* Ensuring content is above the starfield */
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+      border-radius: 8px;
+    }
+
+    /* Navigation styling */
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 15px;
+    }
+
+    .nav-links li {
+      margin: 0;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 10px 15px; /* Keep padding reasonable */
+      color: #ffffff;
+      background-color: #1a1a1a;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+      -webkit-text-stroke: 0.5px #000;
+      transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap; /* Prevent text from wrapping */
+      max-width: 150px; /* Max width to prevent excessive expansion */
+      text-align: center;
+      overflow: hidden; /* Hide text if it exceeds max-width */
+      text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+    }
+
+    .nav-links a:hover {
+      background-color: #00ffff;
+      color: #000000;
+    }
+
+    /* Main content styling */
+    h2 {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    /* Features list styling */
+    .features {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .features li {
+      margin-bottom: 15px;
+    }
+
+    .features h3 {
+      color: #00ffff;
+      margin-bottom: 5px;
+    }
+
+    .features p {
+      margin-left: 20px;
+    }
+
+    /* Image styling */
+    .feature-image {
+      width: 2300px;
+      height: auto;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 20px #00ffff;
+      border-radius: 8px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 500px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+
+      header img {
+        width: 120px; /* Adjust image size for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <a href="index.html">
+        <img src="Logo.jpg" alt="Patrol Bot Logo" title="Patrol Bot - Home's Best Guardian">
+      </a>
+    </header>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="teammembers.html">Team Members</a></li>
+        <li><a href="problemstatements.html">Problem Statements</a></li>
+        <li><a href="projectidea.html">Project Idea</a></li>
+        <li><a href="background.html">Background</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Welcome to Our Website!</h2>
+      <p>
+        Introducing <strong>Patrol Bot</strong>—an advanced robotic system designed to autonomously patrol your home, offering round-the-clock security and real-time monitoring for maximum protection.
+      </p>
+
+      <ul class="features">
+        <li>
+          <h3>Autonomous Patrolling</h3>
+          <p>
+            Patrol Bot moves seamlessly around your home, navigating through rooms, hallways, and entryways, ensuring no area is left unchecked.
+          </p>
+        </li>
+        <li>
+          <h3>Real-Time Monitoring</h3>
+          <p>
+            Stay connected with live updates and alerts through the intuitive Spike Prime and webcam app, so you’re always in control—whether you’re at home or on the go.
+          </p>
+        </li>
+        <li>
+          <h3>Advanced Sensors</h3>
+          <p>
+            Equipped with cutting-edge motion detection and ultrasonic sensors, Patrol Bot is capable of identifying potential threats before anything occurs.
+          </p>
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>

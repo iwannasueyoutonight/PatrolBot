@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You!</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, azure, turquoise);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #0077aa;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0099cc;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .link-box {
+      margin-left: 20px;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .content {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .content h2 {
+      color: #2e7d32;
+      font-size: 32px;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #388e3c;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="Logo.jpg" alt="Patrol Bot" title="Patrol Bot - Home's Best Guardian">
+    </a>
+    <div class="link-box">
+      <label for="pageJump" style="color: white;">Jump to page:</label>
+      <select id="pageJump" onchange="jumpToPage(this)">
+        <option value="">-- Select --</option>
+        <option value="index.html">Home</option>
+        <option value="teammembers.html">Team Members</option>
+        <option value="problemstatements.html">Problem Statements</option>
+        <option value="projectidea.html">Project Idea</option>
+        <option value="background.html">Background</option>
+        <option value="feedback.html">Feedback</option>
+      </select>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="teammembers.html">Team Members</a>
+    <a href="problemstatements.html">Problem Statements</a>
+    <a href="projectidea.html">Project Idea</a>
+    <a href="background.html">Background</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <div class="content">
+    <h2>🎉 Thank You for Your Feedback!</h2>
+    <p>We appreciate your thoughts and will use them to improve our project.</p>
+    <a class="button" href="index.html">Return to Main Page</a>
+  </div>
+
+  <script>
+    function jumpToPage(select) {
+      const page = select.value;
+      if (page) window.location.href = page;
+    }
+  </script>
+
+</body>
+</html>

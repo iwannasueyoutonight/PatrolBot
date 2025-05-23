@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  <style>
+    body {
+      height:100%
+      background: linear-gradient(to bottom, azure, turquoise);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #0077aa;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0099cc;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .link-box {
+      margin-left: 20px;
+    }
+
+    select {
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    form {
+      background: white;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="Logo.jpg" alt="Patrol Bot" title="Patrol Bot - Home's Best Guardian">
+    </a>
+    <div class="link-box">
+      <label for="pageJump" style="color: white;">Jump to page:</label>
+      <select id="pageJump" onchange="jumpToPage(this)">
+        <option value="">-- Select --</option>
+        <option value="index.html">Home</option>
+        <option value="teammembers.html">Team Members</option>
+        <option value="problemstatements.html">Problem Statements</option>
+        <option value="projectidea.html">Project Idea</option>
+        <option value="background.html">Background</option>
+        <option value="feedback.html">Feedback</option>
+      </select>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="teammembers.html">Team Members</a>
+    <a href="problemstatements.html">Problem Statements</a>
+    <a href="projectidea.html">Project Idea</a>
+    <a href="background.html">Background</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <h2>We'd Love Your Feedback!</h2>
+
+  <form action="https://formsubmit.co/your-email@example.com" method="POST">
+    <!-- Replace your-email@example.com with your actual email -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="thankyou.html">
+
+    <button type="submit">Send Feedback</button>
+  </form>
+
+  <script>
+    function jumpToPage(select) {
+      const page = select.value;
+      if (page) window.location.href = page;
+    }
+  </script>
+
+</body>
+</html>

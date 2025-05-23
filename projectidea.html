@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, azure, turquoise);
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    hr {
+      border: 1px solid #00ffff;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 15px 0;
+    }
+
+    nav table {
+      margin: 0 auto;
+    }
+
+    nav td {
+      padding: 0 15px;
+    }
+
+    nav a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      transition: all 0.3s ease;
+      -webkit-tap-highlight-color: rgba(0,0,0,0); /* removes mobile blue box */
+    }
+
+    nav a:hover {
+      background-color: #00ffff;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .team-member {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #e0e0e0;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid #00ffff;
+      width: 80%;
+      border-radius: 10px;
+    }
+
+    .team-member h3 {
+      color: #00ffff;
+      font-size: 1.5em;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .team-member p {
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="Logo.jpg" alt="Patrol Bot" title="Patrol Bot - Home's Best Guardian">
+    </a>
+  </header>
+
+  <hr>
+
+  <nav>
+    <table cellspacing="5" cellpadding="5">
+      <tr>
+        <td><a href="index.html">Home</a></td>
+        <td><a href="teammembers.html">Team Members</a></td>
+        <td><a href="problemstatements.html">Problem Statements</a></td>
+        <td><a href="projectidea.html">Project Idea</a></td>
+        <td><a href="background.html">Background</a></td>
+        <td><a href="feedback.html">Feedback</a></td>
+      </tr>
+    </table>
+  </nav>
+
+  <hr>
+
+  <div class="team-member">
+    <h3>Hardware Design</h3>
+   
+
+  <div class="team-member">
+    <h3>Motors</h3>
+    <p>2 Large Motors For Wheel Drive and 2 Large Motors For Claws Movement</p>
+  </div>
+
+  <div class="team-member">
+    <h3>Sensors</h3>
+    <p>1 ultrasonic Sensor (for obstacle detection),1 Light Sensor (for line detection) </p>
+  </div>
+  <div class="team-member">
+    <h3>Other Components-2 Wheels,Spike Prime Hub</h3>
+    <p>The robot's frame was built compactly to navigate various surfaces.We mounted the ultrasonic sensor on the front for the best range.</p>
+  </div>
+
+
+
+<div class="inner-box">
+  <h3>Programming and Control</h3>
+
+  <div class="inner-box">
+    <h4>Movement Control</h4>
+    <p>Used precise motor commands to control the robot’s wheel speed and turning for accurate navigation.</p>
+  </div>
+
+  <div class="inner-box">
+    <h4>Sensor Integration</h4>
+    <p>Ultrasonic sensor detects obstacles and stops the robot. Light sensor helps in following black lines accurately.</p>
+  </div>
+
+  <div class="inner-box">
+    <h4>Path Following Algorithm</h4>
+    <p>Used conditional statements and loops to follow a predefined patrol path based on sensor input.</p>
+  </div>
+
+  <div class="inner-box">
+    <h4>Event Handling</h4>
+    <p>Robot responds to sensor triggers using "if-else" logic, for example: stopping when obstacle is detected.</p>
+  </div>
+
+
+
+</div>
+</body>
+</html>
