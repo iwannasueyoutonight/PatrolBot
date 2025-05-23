@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,6 +9,7 @@
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding-top: 100px;
+      animation: fadeIn 1s ease-in;
     }
     h1 {
       color: #0077aa;
@@ -25,6 +26,11 @@
     a:hover {
       background-color: #005f88;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -32,6 +38,14 @@
   <h1>🎉 Thank You for Your Feedback!</h1>
   <p>We really appreciate your input.</p>
   <a href="index.html">Return to Homepage</a>
+
+  <script>
+    const name = localStorage.getItem("feedbackName");
+    if (name) {
+      document.querySelector("h1").innerHTML = `🎉 Thank You, ${name}!`;
+      localStorage.removeItem("feedbackName");
+    }
+  </script>
 
 </body>
 </html>
