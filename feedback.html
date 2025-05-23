@@ -44,17 +44,6 @@
       text-decoration: underline;
     }
 
-    .link-box {
-      margin-left: 20px;
-    }
-
-    select {
-      padding: 5px 10px;
-      border-radius: 6px;
-      border: none;
-      font-size: 14px;
-    }
-
     h2 {
       text-align: center;
       margin-top: 30px;
@@ -102,18 +91,6 @@
     <a href="index.html">
       <img src="Logo.jpg" alt="Patrol Bot" title="Patrol Bot - Home's Best Guardian">
     </a>
-    <div class="link-box">
-      <label for="pageJump" style="color: white;">Jump to page:</label>
-      <select id="pageJump" onchange="jumpToPage(this)">
-        <option value="">-- Select --</option>
-        <option value="index.html">Home</option>
-        <option value="teammembers.html">Team Members</option>
-        <option value="problemstatements.html">Problem Statements</option>
-        <option value="projectidea.html">Project Idea</option>
-        <option value="background.html">Background</option>
-        <option value="feedback.html">Feedback</option>
-      </select>
-    </div>
   </header>
 
   <nav>
@@ -127,29 +104,13 @@
 
   <h2>We'd Love Your Feedback!</h2>
 
-  <form action="https://formsubmit.co/m-13958885@moe-dl.edu.my" method="POST">
+  <form action="thankyou.html" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
 
-    <!-- Anti-bot hidden field -->
-    <input type="text" name="_honey" style="display:none">
-
-    <!-- Optional: Disable CAPTCHA -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <!-- Redirect after submission -->
-    <input type="hidden" name="_next" value="thankyou.html">
-
     <button type="submit">Send Feedback</button>
   </form>
-
-  <script>
-    function jumpToPage(select) {
-      const page = select.value;
-      if (page) window.location.href = page;
-    }
-  </script>
 
 </body>
 </html>
