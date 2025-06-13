@@ -8,8 +8,8 @@
       height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, black, black);
-      color: #00ffff;
+      background: linear-gradient(to bottom, black , black);
+      color: #222;
     }
     header {
       padding: 20px;
@@ -48,23 +48,45 @@
       color: black;
     }
     .content {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      font-size: 1.2em;
+      line-height: 1.6em;
+      font-weight: 600;
+      color: #222;
+    }
+    .content h3 {
+      color: #00ffff;
       text-align: center;
-      padding: 40px;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+    .color-box {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      color: #222;
+      font-size: 1.2em;
+      line-height: 1.5em;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <img src="Logo.jpg" alt="Logo">
+    <a href="index.html">
+      <img src="Logo.jpg" alt="Patrol Bot" title="Patrol Bot - Home's Best Guardian">
+    </a>
   </header>
 
   <hr>
 
-  <!-- Navigation -->
   <nav>
-    <table>
+    <table cellspacing="0" cellpadding="0">
       <tr>
         <td><a href="index.html">Home</a></td>
         <td><a href="teammembers.html">Team Members</a></td>
@@ -76,13 +98,37 @@
     </table>
   </nav>
 
-  <!-- Main Content -->
+  <hr>
+
   <div class="content">
-    <h1>Welcome to Our Project Background</h1>
-    <p>This page describes the background of our patrol bot project. Scroll through the navigation to learn more.</p>
+    <h3>Background</h3>
+
+    <div class="color-box" style="background: linear-gradient(135deg, #6dd5fa, #2980b9);">
+      <p>
+        Since January, we have been working diligently to create a robot that could enhance our daily lives. Along the way, we explored various ideas, including a drain-cleaning robot and a delivery robot. However, we ultimately focused our efforts on developing Patrol Bot.
+      </p>
+    </div>
+
+    <div class="color-box" style="background: linear-gradient(135deg, #fbc7a4, #f66b45);">
+      <p>
+        The journey wasn't without challenges; we encountered several setbacks. Yet, through perseverance and teamwork, we successfully built our masterpiece—Patrol Bot.
+      </p>
+    </div>
+
+    <div class="color-box" style="background: linear-gradient(135deg, #d4fc79, #96e6a1);">
+      <p>
+        It took us almost two months to complete the robot. After that, we built a demo map and added little props to make it more beautiful. We used a wooden board as the base to give it a strong and neat foundation.
+      </p>
+    </div>
+
+    <div class="color-box" style="background: linear-gradient(135deg, #fddb92, #d1fdff);">
+      <p>
+        Although we invested significant time and resources, every effort was worthwhile. We're proud of what we've accomplished.
+      </p>
+    </div>
   </div>
 
-  <!-- Hidden Background Music -->
+  <!-- Hidden background music -->
   <audio autoplay loop hidden>
     <source src="song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
