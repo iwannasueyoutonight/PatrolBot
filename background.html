@@ -8,8 +8,8 @@
       height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, black , black);
-      color: #222;
+      background: linear-gradient(to bottom, black, black);
+      color: #fff;
     }
     header {
       padding: 20px;
@@ -68,10 +68,10 @@
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      color: #222;
       font-size: 1.2em;
       line-height: 1.5em;
       font-weight: 600;
-      color: #fff;
     }
   </style>
 </head>
@@ -85,7 +85,7 @@
   <hr>
 
   <nav>
-    <table cellspacing="0" cellpadding="0">
+    <table>
       <tr>
         <td><a href="index.html">Home</a></td>
         <td><a href="teammembers.html">Team Members</a></td>
@@ -127,9 +127,9 @@
     </div>
   </div>
 
-  <!-- Hidden autoplay background music -->
-  <audio autoplay loop>
+  <audio autoplay loop style="display:none">
     <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 </body>
 </html>
