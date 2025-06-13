@@ -114,35 +114,32 @@
     <input type="email" name="email" id="email" placeholder="Your Email" required>
     <div id="emailError" class="error"></div>
     <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
-
     <button type="submit">Send Feedback</button>
   </form>
 
   <script>
     function validateEmail(email) {
-      // Regular expression to check for Gmail domain
-      var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      // Accepts multiple common domains
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@(?:gmail\.com|yahoo\.com(?:\.my)?|hotmail\.com|outlook\.com|icloud\.com|live\.com|moe-dl\.edu\.my)$/;
       return emailPattern.test(email);
     }
 
     function fakeSubmit(event) {
-      event.preventDefault(); // Stop real form submission
+      event.preventDefault();
 
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var emailError = document.getElementById('emailError');
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const emailError = document.getElementById('emailError');
 
       if (!validateEmail(email)) {
-        emailError.textContent = "Please enter a valid Gmail address (e.g., example@gmail.com).";
+        emailError.textContent = "Please enter a valid email (gmail, yahoo, moe-dl, etc).";
         return false;
       } else {
         emailError.textContent = "";
       }
 
-      // Save name to display on thankyou page
       localStorage.setItem("feedbackName", name);
 
-      // Simulate processing then redirect
       setTimeout(() => {
         window.location.href = "thankyou.html";
       }, 500);
