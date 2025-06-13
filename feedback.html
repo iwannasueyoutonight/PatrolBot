@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
   <audio autoplay loop>
     <source src="song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <meta charset="UTF-8">
-  <title>Feedback</title>
   <style>
     body {
       height: 100%;
@@ -123,8 +123,7 @@
 
   <script>
     function validateEmail(email) {
-      // Accepts multiple common domains
-      const emailPattern = /^[a-zA-Z0-9._%+-]+@(?:gmail\.com
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@(?:gmail\.com|yahoo\.com|moe-dl\.edu\.my|outlook\.com)$/;
       return emailPattern.test(email);
     }
 
