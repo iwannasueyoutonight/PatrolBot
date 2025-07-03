@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
+</p> haha</p>
 <head>
   <meta charset="UTF-8">
   <title>Feedback</title>
@@ -86,6 +87,11 @@
     button:hover {
       background-color: #45a049;
     }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -107,17 +113,43 @@
 
   <h2>We'd Love Your Feedback!</h2>
 
-  <form action="https://formsubmit.co/yinhang0304@gmail.com" method="POST">
+  <form id="feedbackForm" onsubmit="return fakeSubmit(event)">
     <input type="text" name="name" id="name" placeholder="Your Name" required>
     <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <div id="emailError" class="error"></div>
     <textarea name="message" placeholder="Your feedback..." rows="5" required></textarea>
-
-    <!-- FormSubmit hidden settings -->
-    <input type="hidden" name="_redirect" value="thankyou.html">
-    <input type="hidden" name="_captcha" value="false">
-
     <button type="submit">Send Feedback</button>
   </form>
+
+  <script>
+    function validateEmail(email) {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@(?:gmail\.com|yahoo\.com|moe-dl\.edu\.my|outlook\.com)$/;
+      return emailPattern.test(email);
+    }
+
+    function fakeSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const emailError = document.getElementById('emailError');
+
+      if (!validateEmail(email)) {
+        emailError.textContent = "Please enter a valid email (gmail, yahoo, moe-dl, etc).";
+        return false;
+      } else {
+        emailError.textContent = "";
+      }
+
+      localStorage.setItem("feedbackName", name);
+
+      setTimeout(() => {
+        window.location.href = "thankyou.html";
+      }, 500);
+
+      return false;
+    }
+  </script>
 
 </body>
 </html>
